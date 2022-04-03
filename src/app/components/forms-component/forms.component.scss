@@ -1,0 +1,35 @@
+.form {
+    @apply w-full;
+
+    &-grid {
+        &--four-columns-by-two-rows {
+            @apply grid grid-cols-4 grid-rows-2 gap-x-3 gap-y-8
+        }
+    }
+
+    &-span {
+        &--one {
+            @apply col-span-1 
+        }
+
+        &--two {
+            @apply col-span-2 
+        }
+
+        &--three {
+            @apply col-span-3 
+        }
+    }
+
+    &-general-fields {
+        @apply border-2 border-text-color rounded w-full h-7 cursor-pointer
+    }
+
+    &--label {
+        @apply text-text-color;
+    }
+
+    &--button {
+        @apply w-full h-9 bg-principal-blue text-principal-white p-3 rounded-sm text-xl col-span-4
+    }
+}

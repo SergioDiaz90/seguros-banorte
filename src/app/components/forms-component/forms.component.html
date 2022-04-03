@@ -1,0 +1,35 @@
+<form 
+    class="form"
+    [ngClass]="{ 'form-grid--four-columns-by-two-rows': detailsCreateForms.grid.columns === 4 && detailsCreateForms.grid.rows === 2 }"
+    [formGroup]="form" *ngIf="createFormView">
+    <div
+        [ngClass]="{
+            'form-span--one': item.start === 1,
+            'form-span--two': item.start === 2,
+            'form-span--three': item.start === 3
+        }"
+        *ngFor="let item of elementsForms">
+            <div *ngIf="item.type === 'input'">
+                <label class="form--label" for="{{ item.name }}">{{ item.name }}</label>
+                <input
+                    id="{{ item.nameField }}"
+                    class="form-general-fields"
+                    formControlName="{{ item.nameField }}"
+                    type="input">
+            </div>
+            <div *ngIf="item.type === 'dropdown'">
+                <label class="form--label" for="{{ item.name }}">{{ item.name }}</label>
+                <select
+                    id="{{ item.name }}"
+                    class="form-general-fields"
+                    type="select"
+                    formControlName="{{ item.nameField }}">
+                    <option value="volvo">Volvo</option>
+                    <option value="saab">Saab</option>
+                    <option value="mercedes">Mercedes</option>
+                    <option value="audi">Audi</option>
+                </select>
+            </div>
+    </div>
+    <button class="form--button">{{ detailsCreateForms.labelButton }}</button>
+</form>

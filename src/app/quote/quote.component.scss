@@ -1,0 +1,22 @@
+.header {
+    @apply w-full h-7 py-3 px-3 bg-principal-gray;
+}
+
+.container {
+    @apply w-screen bg-principal-blue h-11 relative flex flex-row-reverse;
+
+    .quote {
+    
+        &-container {
+            @apply w-1/3 h-full bg-principal-white rounded shadow-lg px-7 py-4;
+        }
+    
+        &--title {
+            @apply text-principal-blue text-center text-title font-medium
+        }
+    
+        &--link {
+            @apply text-principal-blue text-center my-7
+        }
+    }
+}
