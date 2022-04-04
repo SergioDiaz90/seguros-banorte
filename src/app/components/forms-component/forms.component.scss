@@ -3,32 +3,40 @@
 
     &-grid {
         &--four-columns-by-two-rows {
-            @apply grid grid-cols-4 grid-rows-2 gap-x-3 gap-y-8
-                md:gap-y-3 smaller:gap-0;
+            @apply grid grid-cols-4 grid-rows-2 
+                lg:gap-x-3 lg:gap-y-8
+                md:gap-x-3
+                md:gap-y-3
+                smaller:gap-0;
         }
     }
 
     &-span {
         &--one {
-            @apply col-span-1 md:col-span-4 smaller:col-span-1;
+            @apply lg:col-span-1 md:col-span-4 smaller:col-span-1;
         }
 
         &--two {
-            @apply col-span-2 md:col-span-4 smaller:first:col-span-4;
+            @apply md:col-span-4 lg:col-span-2;
 
-            &:nth-child(2) {
-                @apply smaller:col-span-3;
+            @media (max-width: 320px) {
+                &:nth-child(1) {
+                    @apply smaller:col-span-4;
+                }
+                &:nth-child(2) {
+                    @apply smaller:col-span-3;
+                }
             }
         }
 
         &--three {
-            @apply col-span-3 md:col-span-4 smaller:col-span-4;
+            @apply lg:col-span-3 md:col-span-4 smaller:col-span-4;
         }
 
     }
 
     &-field--container{
-        @apply md:flex justify-between;
+        @apply w-full lg:block md:flex md:justify-between;
 
         select, option:disabled {
             @apply text-placeholders;
@@ -37,15 +45,23 @@
     }
 
     &-general-fields {
-        @apply border-2 border-text-color rounded w-full h-7 cursor-pointer
-            md:w-3/4 flex justify-end items-center px-1;
+        @apply border-2 border-text-color rounded h-7 cursor-pointer
+            lg:inline
+            lg:w-full
+            md:w-3/4
+            md:flex
+            md:justify-end
+            md:items-center
+            md:px-1
+            smaller:w-full;
     }
 
     &--label {
-        @apply text-text-color smaller:hidden;
+        @apply text-text-color md:flex smaller:hidden;
     }
 
     &--button {
         @apply w-full h-9 bg-principal-blue text-principal-white p-3 rounded-sm text-xl col-span-4
+        smaller:mt-3
     }
 }

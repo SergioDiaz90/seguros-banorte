@@ -37,7 +37,8 @@ module.exports = {
       '13': '620px',
       '14': '150px',
       '15': '200px',
-      '16': '783px'
+      '16': '783px',
+      '18': '681px'
     },
     fontSize: {
       'xs': '.75rem',
@@ -60,9 +61,8 @@ module.exports = {
       'smaller': '320px',
       'sm': '640px',
       'md'	:'768px',
-      'lg'	:'024px',
-      'xl'	:'1280px',
-      '2xl'	:'1536px'
+      'lg'	:'1366px',
+      'xl'	:'1536px'
     },
 
   },

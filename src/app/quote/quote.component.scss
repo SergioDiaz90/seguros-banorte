@@ -3,21 +3,40 @@
 }
 
 .all-container {
-    @apply pt-11 bg-background-white
-        smaller:pt-15;
+    @apply  
+        md:bg-background-white
+        md:pt-11;
 
     .quote-wrapper {
-        @apply w-screen bg-principal-blue h-11 relative flex px-12
+        @apply w-screen h-11 relative flex 
+            md:bg-principal-blue
+            md:px-12
             smaller:px-0 bg-principal-white;
     
         .quote {
         
             &-container {
-                @apply w-1/3 h-13 bg-principal-white rounded shadow-lg shadow-shadow-color px-7 py-4 relative bottom-14
-                    md:w-full bottom-15 smaller:w-full px-1 py-1 smaller:px-0 py-0 shadow-none bg-principal-white;
+                @apply
+                    lg:h-18
+                    md:w-1/3 md:h-13 
+                  md:bg-principal-white
+                    md:rounded
+                    md:shadow-lg md:shadow-shadow-color
+                    md:px-7 md:py-4
+                    md:relative
+                    md:bottom-14
+                    md:w-full
+                    md:bottom-15
+                    smaller:w-full
+                    smaller:px-1
+                    smaller:py-1
+                    smaller:px-0
+                    smaller:py-0
+                    smaller:shadow-none
+                    smaller:bg-principal-white;
 
                 .overline-smaller {
-                    @apply hidden smaller:block w-full h-1 bg-principal-blue my-4;
+                    @apply md:hidden smaller:block w-full h-1 bg-principal-blue my-4;
                 }
 
                 .forms-container {
@@ -36,14 +55,14 @@
             }
 
             &--link {
-                @apply text-principal-blue text-center my-7;
+                @apply text-principal-blue text-center smaller:my-4;
             }
 
         }
     
         .sub-title {
-            @apply text-principal-gray bg-principal-blue text-4xl mx-10 my-10
-                md:hidden smaller:hidden;
+            @apply text-principal-gray bg-principal-blue text-4xl mx-8 my-8
+                lg:flex md:hidden smaller:hidden;
         }
 
     }
