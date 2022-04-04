@@ -9,7 +9,7 @@
             'form-span--three': item.start === 3
         }"
         *ngFor="let item of elementsForms">
-            <div *ngIf="item.type === 'input'">
+            <div class="form-field--container" *ngIf="item.type === 'input'">
                 <label class="form--label" for="{{ item.name }}">{{ item.name }}</label>
                 <input
                     id="{{ item.nameField }}"
@@ -17,7 +17,7 @@
                     formControlName="{{ item.nameField }}"
                     type="input">
             </div>
-            <div *ngIf="item.type === 'dropdown'">
+            <div class="form-field--container" *ngIf="item.type === 'dropdown'">
                 <label class="form--label" for="{{ item.name }}">{{ item.name }}</label>
                 <select
                     id="{{ item.name }}"

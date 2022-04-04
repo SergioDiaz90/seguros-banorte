@@ -2,21 +2,37 @@
     @apply w-full h-7 py-3 px-3 bg-principal-gray;
 }
 
-.container {
-    @apply w-screen bg-principal-blue h-11 relative flex flex-row-reverse;
+.all-container {
+    @apply pt-11 bg-background-white;
 
-    .quote {
+    .quote-wrapper {
+        @apply w-screen bg-principal-blue h-11 relative flex px-12;
     
-        &-container {
-            @apply w-1/3 h-full bg-principal-white rounded shadow-lg px-7 py-4;
+        .quote {
+        
+            &-container {
+                @apply w-1/3 h-13 bg-principal-white rounded shadow-lg shadow-shadow-color px-7 py-4 relative bottom-14
+                    md:w-full bottom-15;
+            }
+        
+            &--title {
+                @apply text-principal-blue text-center text-title font-medium
+                    md:text-title-tablet;
+            }
+        
+            &--overtitle {
+                @apply text-center text-text-color text-2xl mb-8;
+            }
+
+            &--link {
+                @apply text-principal-blue text-center my-7;
+            }
         }
     
-        &--title {
-            @apply text-principal-blue text-center text-title font-medium
-        }
-    
-        &--link {
-            @apply text-principal-blue text-center my-7
+        .sub-title {
+            @apply text-principal-gray bg-principal-blue text-4xl mx-10 my-10
+                md:hidden;
         }
     }
+    
 }

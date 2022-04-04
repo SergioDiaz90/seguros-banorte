@@ -1,3 +1,4 @@
 .header {
-    @apply w-full h-10 py-3 px-3 bg-principal-gray;
+    @apply w-full h-10 py-3 px-3 bg-principal-gray
+        md:flex justify-center;
 }

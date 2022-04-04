@@ -46,8 +46,8 @@ export class QuoteComponent implements OnInit {
           rowUbication: 2
         },
         {
-          nameField: 'Email',
-          name: 'email',
+          nameField: 'email',
+          name: 'Email',
           type: 'input',
           start: 3,
           rowUbication: 2

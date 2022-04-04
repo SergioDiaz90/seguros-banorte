@@ -4,25 +4,32 @@
     &-grid {
         &--four-columns-by-two-rows {
             @apply grid grid-cols-4 grid-rows-2 gap-x-3 gap-y-8
+                md:gap-y-3;
         }
     }
 
     &-span {
         &--one {
-            @apply col-span-1 
+            @apply col-span-1 md:col-span-4;
         }
 
         &--two {
-            @apply col-span-2 
+            @apply col-span-2 md:col-span-4;
         }
 
         &--three {
-            @apply col-span-3 
+            @apply col-span-3 md:col-span-4;
         }
+
+    }
+
+    &-field--container{
+        @apply md:flex justify-between;
     }
 
     &-general-fields {
         @apply border-2 border-text-color rounded w-full h-7 cursor-pointer
+            md:w-3/4 flex justify-end items-center;
     }
 
     &--label {

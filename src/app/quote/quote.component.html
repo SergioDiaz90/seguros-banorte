@@ -1,12 +1,15 @@
-<div class="container">
-    <h2>El único que toma un riesgo con el seguro automotriz es aquel que no lo toma.</h2>
-    <div class="quote-container">
-        <h1 class="quote--title">Cotiza tu seguro automotriz</h1>
-        <div class="forms-container">
-            <app-forms-component *ngIf="sendInfoForForms" [detailsCreateForms]="detailsCreateForms"></app-forms-component>
+<div class="all-container">
+    <div class="quote-wrapper">
+        <div class="quote-container">
+            <h1 class="quote--title">Cotiza tu seguro automotriz</h1>
+            <h3 class="quote--overtitle">¡Resultados instantáneos!</h3>
+            <div class="forms-container">
+                <app-forms-component *ngIf="sendInfoForForms" [detailsCreateForms]="detailsCreateForms"></app-forms-component>
+            </div>
+            <div class="quote--link">
+                <a href="#">Recuperar cotización</a>
+            </div>
         </div>
-        <div class="quote--link">
-            <a href="#">Recuperar cotización</a>
-        </div>
+        <h2 class="sub-title">El único que toma un riesgo con el seguro automotriz es aquel que no lo toma.</h2>
     </div>
 </div>
