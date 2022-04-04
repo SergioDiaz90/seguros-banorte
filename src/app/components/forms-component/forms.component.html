@@ -15,6 +15,7 @@
                     id="{{ item.nameField }}"
                     class="form-general-fields"
                     formControlName="{{ item.nameField }}"
+                    placeholder="{{ item.name }}"
                     type="input">
             </div>
             <div class="form-field--container" *ngIf="item.type === 'dropdown'">
@@ -24,6 +25,7 @@
                     class="form-general-fields"
                     type="select"
                     formControlName="{{ item.nameField }}">
+                    <option disabled selected class="placeholders">{{ item.name }}</option>
                     <option value="volvo">Volvo</option>
                     <option value="saab">Saab</option>
                     <option value="mercedes">Mercedes</option>

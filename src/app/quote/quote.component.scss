@@ -3,21 +3,32 @@
 }
 
 .all-container {
-    @apply pt-11 bg-background-white;
+    @apply pt-11 bg-background-white
+        smaller:pt-15;
 
     .quote-wrapper {
-        @apply w-screen bg-principal-blue h-11 relative flex px-12;
+        @apply w-screen bg-principal-blue h-11 relative flex px-12
+            smaller:px-0 bg-principal-white;
     
         .quote {
         
             &-container {
                 @apply w-1/3 h-13 bg-principal-white rounded shadow-lg shadow-shadow-color px-7 py-4 relative bottom-14
-                    md:w-full bottom-15;
+                    md:w-full bottom-15 smaller:w-full px-1 py-1 smaller:px-0 py-0 shadow-none bg-principal-white;
+
+                .overline-smaller {
+                    @apply hidden smaller:block w-full h-1 bg-principal-blue my-4;
+                }
+
+                .forms-container {
+                    @apply smaller:px-1 py-1;
+                }
+
             }
         
             &--title {
                 @apply text-principal-blue text-center text-title font-medium
-                    md:text-title-tablet;
+                    md:text-title-tablet smaller:text-smartphone-title;
             }
         
             &--overtitle {
@@ -27,12 +38,14 @@
             &--link {
                 @apply text-principal-blue text-center my-7;
             }
+
         }
     
         .sub-title {
             @apply text-principal-gray bg-principal-blue text-4xl mx-10 my-10
-                md:hidden;
+                md:hidden smaller:hidden;
         }
+
     }
     
 }

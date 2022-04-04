@@ -4,36 +4,45 @@
     &-grid {
         &--four-columns-by-two-rows {
             @apply grid grid-cols-4 grid-rows-2 gap-x-3 gap-y-8
-                md:gap-y-3;
+                md:gap-y-3 smaller:gap-0;
         }
     }
 
     &-span {
         &--one {
-            @apply col-span-1 md:col-span-4;
+            @apply col-span-1 md:col-span-4 smaller:col-span-1;
         }
 
         &--two {
-            @apply col-span-2 md:col-span-4;
+            @apply col-span-2 md:col-span-4 smaller:first:col-span-4;
+
+            &:nth-child(2) {
+                @apply smaller:col-span-3;
+            }
         }
 
         &--three {
-            @apply col-span-3 md:col-span-4;
+            @apply col-span-3 md:col-span-4 smaller:col-span-4;
         }
 
     }
 
     &-field--container{
         @apply md:flex justify-between;
+
+        select, option:disabled {
+            @apply text-placeholders;
+        }
+
     }
 
     &-general-fields {
         @apply border-2 border-text-color rounded w-full h-7 cursor-pointer
-            md:w-3/4 flex justify-end items-center;
+            md:w-3/4 flex justify-end items-center px-1;
     }
 
     &--label {
-        @apply text-text-color;
+        @apply text-text-color smaller:hidden;
     }
 
     &--button {
