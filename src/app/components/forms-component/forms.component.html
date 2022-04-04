@@ -21,15 +21,13 @@
             <div class="form-field--container" *ngIf="item.type === 'dropdown'">
                 <label class="form--label" for="{{ item.name }}">{{ item.name }}</label>
                 <select
+                    *ngIf="item.name === 0"
                     id="{{ item.name }}"
                     class="form-general-fields"
                     type="select"
                     formControlName="{{ item.nameField }}">
                     <option disabled selected class="placeholders">{{ item.name }}</option>
-                    <option value="volvo">Volvo</option>
-                    <option value="saab">Saab</option>
-                    <option value="mercedes">Mercedes</option>
-                    <option value="audi">Audi</option>
+                    <option id="{{ info.id }}" *ngFor="let info of detailsCreateForms[item.nameField]">{{ info.brand }}</option>
                 </select>
             </div>
     </div>

@@ -9,6 +9,8 @@ import { ICreateForms } from 'src/app/interface/interfaces';
 })
 export class FormsComponent implements OnInit {
   @Input() detailsCreateForms: ICreateForms
+  @Input() infoDropdown: any
+
   form: FormGroup
   elementsForms: any;
   createFormView: boolean;
@@ -27,6 +29,7 @@ export class FormsComponent implements OnInit {
 
   createForms () {
     if ( this.detailsCreateForms ) {
+      console.log(  this.detailsCreateForms )
       this.elementsForms = this.detailsCreateForms.elementsForms
       for ( let item in this.elementsForms ) {
           this.form.addControl( this.elementsForms[item].nameField, new FormControl('', Validators.required ))

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ICreateForms } from '../interface/interfaces';
+import { ApiServiceService } from '../service/api-service.service';
 
 @Component({
   selector: 'app-quote-component',
@@ -9,9 +10,11 @@ import { ICreateForms } from '../interface/interfaces';
 export class QuoteComponent implements OnInit {
   detailsCreateForms: ICreateForms
   sendInfoForForms: boolean
+  infoDropdown: any
 
-  constructor() {
+  constructor( private apiService: ApiServiceService ) {
     this.sendInfoForForms = false
+    this.infoDropdown = undefined
     this.detailsCreateForms = {}
   }
 
@@ -20,7 +23,10 @@ export class QuoteComponent implements OnInit {
   }
 
 
-  createFieldsFormByQuote () {
+  async createFieldsFormByQuote () {
+    let { modelCar, brandCar } = await this.apiService.getModelsCarsByBrand()
+
+    console.log( { modelCar, brandCar } )
     this.detailsCreateForms = {
       nameFormGroup: 'formQuote',
       elementsForms: [
@@ -57,7 +63,9 @@ export class QuoteComponent implements OnInit {
         columns: 4,
         rows: 2
       },
-      labelButton: 'Cotizar'
+      labelButton: 'Cotizar',
+      brandCar,
+      modelCar
     }
 
     this.sendInfoForForms = true
