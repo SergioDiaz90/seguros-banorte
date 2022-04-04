@@ -21,13 +21,32 @@
             <div class="form-field--container" *ngIf="item.type === 'dropdown'">
                 <label class="form--label" for="{{ item.name }}">{{ item.name }}</label>
                 <select
-                    *ngIf="item.name === 0"
+                    *ngIf="item?.nameField === 'brandCar'"
+                    id="{{ item.name }}"
+                    class="form-general-fields"
+                    type="select"
+                    formControlName="{{ item.nameField }}"
+                    (change)="onChangeBrand()">
+                    <option disabled selected class="placeholders">{{ item.name }}</option>
+                    <option id="{{ info.id }}" value="{{ info.brand }}" *ngFor="let info of infoDropdown[item.nameField]">{{ info.brand }}</option>
+                </select>
+                <select
+                    *ngIf="item?.nameField === 'modelCar'"
                     id="{{ item.name }}"
                     class="form-general-fields"
                     type="select"
                     formControlName="{{ item.nameField }}">
                     <option disabled selected class="placeholders">{{ item.name }}</option>
-                    <option id="{{ info.id }}" *ngFor="let info of detailsCreateForms[item.nameField]">{{ info.brand }}</option>
+                    <option id="{{ info.id }}" *ngFor="let info of models[selectBrand]">{{ info.model }}</option>
+                </select>
+                <select
+                    *ngIf="item?.nameField === 'year'"
+                    id="{{ item.name }}"
+                    class="form-general-fields"
+                    type="select"
+                    formControlName="{{ item.nameField }}">
+                    <option disabled selected class="placeholders">{{ item.name }}</option>
+                    <option *ngFor="let info of years">{{ info }}</option>
                 </select>
             </div>
     </div>
